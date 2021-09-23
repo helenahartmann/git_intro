@@ -1,5 +1,7 @@
 ---
-title: "Title goes here"
+title: "Let's get reproducible!"
+author: "Helena Hartmann"
+date: "23.09.2021"
 output: github_document
 ---
 
@@ -29,14 +31,16 @@ The repository to this file can be found [here](https://github.com/helenahartman
 
 ## Including a chunk
 
-```{r setup, include = FALSE}
+This is some text *that* is very **important**.
+
+```{r setup, include = TRUE}
 
 # This is a code chunk. because we set the chunk options to include = FALSE, this chunk will not show up in our formatted output document of choice. Change this to TRUE to show the chunk.
 
 knitr::opts_chunk$set(echo = TRUE)
 # this option will set to show code and output for all chunks
 
-2 + 3
+a = 2 + 3
 ```
 
 
@@ -53,8 +57,9 @@ The mean speed of cars in the cars dataset is `r mean(cars$speed)` and the mean 
 
 You can include R code in the document as follows:
 
-```{r chunkname1}
+```{r data_summary}
 # change the chunkname above
+a
 summary(cars)
 ```
 
@@ -62,7 +67,7 @@ summary(cars)
 
 You can load some data about penguins.
 
-```{r data, include = FALSE}
+```{r penguin_data, echo = FALSE}
 
 # load some data
 install.packages("palmerpenguins")
@@ -79,9 +84,9 @@ write.csv(data,'penguin_data.csv')
 
 ## Including Plots
 
-You can also embed plots, for example:
+You can also embed plots, for example the one below. This is a very nice plot.
 
-```{r chunkname3}
+```{r plot}
 # change the chunkname above
 # add ', echo=FALSE' to the chunk options above and see what changes in your output when you knit
 plot(pressure)
